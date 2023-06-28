@@ -1,0 +1,21 @@
+{
+	"name": "@react-useful-hooks/use-window-storage",
+	"private": true,
+	"version": "1.0.0",
+	"license": "MIT",
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"DEVIDER1": "============================================= [use-window-storage]",
+		"dev": "yarn workspace @react-useful-hooks/use-window-storage dev",
+		"build": "yarn workspace @react-useful-hooks/use-window-storage build",
+		"install-peer": "yarn workspace @react-useful-hooks/use-window-storage install-peer",
+		"test": "yarn workspace @react-useful-hooks/use-window-storage test",
+		"lint": "yarn workspace @react-useful-hooks/use-window-storage lint",
+		"lint-staged": "yarn workspace @react-useful-hooks/use-window-storage lint-staged",
+		"deploy": "node ./scripts/before-deploy.js && yarn workspace @react-useful-hooks/use-window-storage deploy && node ./scripts/after-deploy.js",
+		"DEVIDER2": "============================================= [playground-next]",
+		"dev-next": "yarn workspace playground dev"
+	}
+}

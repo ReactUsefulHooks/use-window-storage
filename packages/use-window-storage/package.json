@@ -1,0 +1,76 @@
+{
+  "name": "@react-useful-hooks/use-window-storage",
+  "sideEffects": false,
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "keywords": [],
+  "description": "",
+  "homepage": "",
+  "repository": "",
+  "author": {
+    "name": "Eddie Choi",
+    "email": "choi.jongsun0329@gmail.com"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "files": [
+    "dist/*"
+  ],
+  "engines": {
+    "node": ">=18.2.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "scripts": {
+    "deploy": "yarn build && yarn publish --access=public",
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "test": "vitest",
+    "lint": "lint"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "18.16.3",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "jsdom": "^22.0.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.4",
+    "vitest": "^0.31.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
