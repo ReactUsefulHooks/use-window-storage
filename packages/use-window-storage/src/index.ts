@@ -1,1 +1,1 @@
-export { initWindowStorage } from './useWindowStorage'
+export * from './useWindowStorage'

@@ -7,10 +7,6 @@ export default class BasicStorage {
     throw new Error(`Need to override *setFlagState* function in derived class.`)
   }
 
-  setKeys(keys: any[]): any {
-    throw new Error(`Need to override *setKeys* function in derived class.`)
-  }
-
   update(): any {
     throw new Error(`Need to override *update* function in derived class.`)
   }

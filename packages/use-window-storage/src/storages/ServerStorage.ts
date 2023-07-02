@@ -5,24 +5,20 @@ import BasicStorage, { FlagState } from './BasicStorage'
  * ServerStorage is mocked version of local or session storage
  * Instead only client side provides window storages, developer can use Storage within server context.
  */
-export default class ServerStorage extends BasicStorage {
+export default class ServerStorage<IStorage> extends BasicStorage {
   setFlagState(flagState: FlagState): this {
-    return this
-  }
-
-  setKeys(keys: any[]): this {
     return this
   }
 
   update(): void {}
 
-  set(key: any, value: unknown): void {}
+  set<Key extends keyof IStorage>(key: Key, value: IStorage[Key]): void {}
 
-  get(key: any): unknown {
+  get<Key extends keyof IStorage>(key: Key): IStorage[Key] | undefined {
     return undefined
   }
 
-  clear(key: any) {}
+  clear(key: keyof IStorage): void {}
 
-  clearAll() {}
+  clearAll(): void {}
 }
