@@ -1,12 +1,3 @@
-<p align='center'>
-    <a href="https://github.com/ReactUsefulHooks/use-window-storage/blob/main/CONTRIBUTING.md">
-        <img src="https://img.shields.io/badge/-ENGLISH-blueviolet?style=for-the-badge" />
-    </a>
-    <a href="https://github.com/ReactUsefulHooks/use-window-storage/blob/main/contributing/CONTRIBUTING.ko.md">
-        <img src="https://img.shields.io/badge/-KOREAN-violet?style=for-the-badge"/>
-    </a>
-</p>
-
 # Contributing
 
 Hi there! Thank you for your interest.

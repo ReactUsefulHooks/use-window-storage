@@ -3,15 +3,6 @@
 </p>
 
 <p align='center'>
-    <a href="https://github.com/ReactUsefulHooks/use-window-storage/blob/main/README.md">
-        <img src="https://img.shields.io/badge/-ENGLISH-blueviolet?style=for-the-badge" />
-    </a>
-    <a href="https://github.com/ReactUsefulHooks/use-window-storage/blob/main/readme/README.ko.md">
-        <img src="https://img.shields.io/badge/-KOREAN-violet?style=for-the-badge"/>
-    </a>
-</p>
-
-<p align='center'>
   <!-- slack -->
   <a target="_blank" href="https://reactusefulhooks.slack.com">
     <img src="https://img.shields.io/badge/slack-reactusefulhooks-9cf.svg?logo=slack" alt="slack" />
