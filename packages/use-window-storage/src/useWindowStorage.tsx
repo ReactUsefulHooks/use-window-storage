@@ -19,14 +19,14 @@ const serverStorage = new ServerStorage()
 const WindowStorageContext = createContext<UseWindowStorageReturn<any, any> | null>(null)
 
 export const WindowStorageProvider = ({ children }: PropsWithChildren<any>) => {
-  const [flag, setFlag] = useState(1)
+  const flagState = useState(1)
   const [storages, setStorages] = useState(() => ({
-    localStorage: serverStorage.setFlagState([flag, setFlag]),
-    sessionStorage: serverStorage.setFlagState([flag, setFlag])
+    localStorage: serverStorage.setFlagState(flagState),
+    sessionStorage: serverStorage.setFlagState(flagState)
   }))
   useEffect(() => {
-    setStorages({ localStorage: localStorage.setFlagState([flag, setFlag]), sessionStorage: sessionStorage.setFlagState([flag, setFlag]) })
-  }, [flag])
+    setStorages({ localStorage: localStorage.setFlagState(flagState), sessionStorage: sessionStorage.setFlagState(flagState) })
+  }, [flagState[0]])
   return <WindowStorageContext.Provider value={storages}>{children}</WindowStorageContext.Provider>
 }
 

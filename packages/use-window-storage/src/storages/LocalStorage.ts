@@ -11,7 +11,7 @@ export default class LocalStorage<ILocalStorage> extends BasicStorage {
   update(): void | never {
     if (!this.flagState) throw new Error('[useWindowStorage.update] need to define flagState') /* guard */
     const [_, setFlag] = this.flagState
-    setFlag((prev) => prev++)
+    setFlag((prev) => prev + 1)
   }
 
   set<Key extends keyof ILocalStorage>(key: Key, value: ILocalStorage[Key]): void {

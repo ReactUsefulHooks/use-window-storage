@@ -1,8 +1,9 @@
+import LocalStorageTest from '@/components/LocalStorageTest';
 
 export default function Home() {
 	return (
 		<>
-			<button onClick={() => {}}>call</button>
+			<LocalStorageTest />
 		</>
 	);
 }

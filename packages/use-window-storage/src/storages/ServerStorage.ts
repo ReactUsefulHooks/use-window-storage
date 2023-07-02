@@ -10,15 +10,23 @@ export default class ServerStorage<IStorage> extends BasicStorage {
     return this
   }
 
-  update(): void {}
+  update(): void {
+    return
+  }
 
-  set<Key extends keyof IStorage>(key: Key, value: IStorage[Key]): void {}
+  set<Key extends keyof IStorage>(key: Key, value: IStorage[Key]): void {
+    return
+  }
 
   get<Key extends keyof IStorage>(key: Key): IStorage[Key] | undefined {
     return undefined
   }
 
-  clear(key: keyof IStorage): void {}
+  clear(key: keyof IStorage): void {
+    return
+  }
 
-  clearAll(): void {}
+  clearAll(): void {
+    return
+  }
 }

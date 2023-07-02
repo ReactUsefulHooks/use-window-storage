@@ -11,7 +11,7 @@ export default class SessionStorage<ISessionStorage> extends BasicStorage {
   update(): void | never {
     if (!this.flagState) throw new Error('[useWindowStorage.sessionStorage.update] need to define flagState') /* guard */
     const [_, setFlag] = this.flagState
-    setFlag((prev) => prev++)
+    setFlag((prev) => prev + 1)
   }
 
   set<Key extends keyof ISessionStorage>(key: Key, value: ISessionStorage[Key]): void {
