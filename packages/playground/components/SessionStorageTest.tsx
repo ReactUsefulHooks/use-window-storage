@@ -3,6 +3,7 @@ import { useWindowStorage } from '@react-useful-hooks/use-window-storage';
 
 export default function SessionStorageTest() {
 	const { sessionStorage } = useWindowStorage<{}, { eddie_test: string }>();
+  localStorage.getItem
 	return (
 		<section>
 			<h1>Session Storage: {sessionStorage.get('eddie_test')}</h1>

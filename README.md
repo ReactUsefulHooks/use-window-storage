@@ -35,12 +35,14 @@
 <br />
 
 # use-window-storage
+# NOT RELEASE YET
 
 ## 📌 Table of contents
 
 - 🔮 Preview
 - 🚧 Problem
 - 💡 Solution
+- 🛠 Installation
 - 🌈 API
 - 📝 Example
 - 🏆 Contributors
@@ -51,49 +53,47 @@
 
 ## 🔮 Preview
 
+`use-window-storage` is the hook that provides `window.localStorage` and `window.sessionStorage` reactive.
+
 ## 🚧 Problem
+
+It is complicated to sync react state between local storage and session storage.
+
+To make localStorage or sessionStorage value reactive needs copies of localStorage values using `useEffect` hook. Furthermore, localStorage or sessionStorage value should not be used Server Side.
 
 ## 💡 Solution
 
+Use `use-window-storage` hook that provides encrypted storage values, safe Server Side use and reactivity.
+
+## 🛠 Installation
+
+```shell
+// using yarn
+yarn add @react-useful-hooks/use-window-storage
+
+// using npm
+npm install @react-useful-hooks/use-window-storage
+```
+
+Need to add `WindowStorageProvider` to App.
+
+```javascript
+import { WindowStorageProvider } from '@react-useful-hooks/use-window-storage';
+
+function App() {
+	return <WindowStorageProvider>//...</WindowStorageProvider>;
+}
+```
+
 ## 🌈 API
 
-```typescript
-interface ModalController {
-  top: Component: React.FC<any>
-  push: (key: string, Component: React.FC<any>, props?: any) => Promise<unknown>
-  pop: () => void
-  close: (key: string) =>  void
-  clear: () => void
-}
-const modal: ModalController = useModal()
-```
-
-### ModalController.top
-
-### ModalController.push
-
-|  params   |   type   | description | default |
-| :-------: | :------: | :---------: | :-----: |
-|    key    |  string  |             |         |
-| Component | React.FC |             |         |
-|   props   |  string  |             |         |
 
 
-```typescript
-
-```
-
-### ModalController.pop
-
-### ModalController.close
-
-### ModalController.clear
-
-## 📝 Example
+### 🟦 Typescript
 
 ## 🏆 Contributors
 
-Thanks goes to these wonderful people.
+Thanks to these wonderful people.
 
 <p align='center'>
   <a target="_blank" href="https://github.com/eddie0329"><img width="150" src="https://github.com/eddie0329.png" alt="eddie0329"></a>
@@ -109,13 +109,13 @@ Please make sure to read the [Contributing Guide](https://github.com/ReactUseful
 
 ### 🐛 Bugs
 
-Please post issue for bugs, missing documetations, or unexpected behavior
+Please post issues for bugs, missing documentation, or unexpected behavior
 
 [Click for bug-report](https://github.com/ReactUsefulHooks/use-window-storage/issues/new?assignees=&labels=bug&template=bug-report.md)
 
 ### ⭐️ Feature Requests
 
-Please post issue to suggest new features.
+Please post issues to suggest new features.
 
 [Click for feature-request](https://github.com/ReactUsefulHooks/use-window-storage/issues/new?assignees=&labels=enhancement&template=feature-request.md)
 
@@ -125,7 +125,7 @@ Please post issue to suggest new features.
 
 ## 🦄 Sponsors
 
-Become first sponsor this project!
+Become the first sponsor!
 
 > Check out more useful react hooks [here](https://github.com/ReactUsefulHooks). <br />
 > If you have any questions, feel free to join our [slack](https://reactusefulhooks.slack.com)
