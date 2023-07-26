@@ -30,4 +30,7 @@ export const WindowStorageProvider = ({ children }: PropsWithChildren<any>) => {
   return <WindowStorageContext.Provider value={storages}>{children}</WindowStorageContext.Provider>
 }
 
-export const useWindowStorage = <ILocalStorage, ISessionStorage>() => useContext(WindowStorageContext) as UseWindowStorageReturn<ILocalStorage, ISessionStorage>
+export const useWindowStorage = <ILocalStorage, ISessionStorage>() => {
+  if (!useContext(WindowStorageContext)) throw new Error('[useWindowStorage] Provider should be registered.') /* guard */
+  return useContext(WindowStorageContext) as UseWindowStorageReturn<ILocalStorage, ISessionStorage>
+}

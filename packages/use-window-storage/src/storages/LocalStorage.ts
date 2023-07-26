@@ -45,7 +45,7 @@ export default class LocalStorage<ILocalStorage> extends BasicStorage {
 
   clearAll() {
     try {
-      window.localStorage.claer()
+      window.localStorage.clear()
       this.update()
     } catch (e) {
       console.error('[useWindowStorage.LocalStorage.clearAll], fail to clearAll: ', e)
