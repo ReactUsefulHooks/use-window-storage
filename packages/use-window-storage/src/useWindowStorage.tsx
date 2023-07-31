@@ -1,3 +1,4 @@
+'use client'
 import React, { PropsWithChildren, createContext, useContext, useEffect, useState } from 'react'
 import { LocalStorage, ServerStorage, SessionStorage } from './storages'
 
