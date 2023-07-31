@@ -1,12 +1,6 @@
-import React from 'react'
+import { renderWindowStorageHook } from './utils'
 import { renderHook, act } from '@testing-library/react'
-import { WindowStorageProvider, useWindowStorage } from '../../src'
-
-const wrapper = ({ children }) => <WindowStorageProvider>{children}</WindowStorageProvider>
-const renderWindowStorageHook = () => {
-  const { result } = renderHook(() => useWindowStorage<any, any>(), { wrapper })
-  return result.current.localStorage
-}
+import { useWindowStorage } from '../../src'
 
 describe('localStorage test', () => {
   /* constants */
@@ -34,16 +28,14 @@ describe('localStorage test', () => {
 
   describe('localStorage get test', () => {
     it('get primitive value test', () => {
-      const localStorage = renderWindowStorageHook()
-      const LOCAL_STORAGE_KEY1 = 'key1'
+      const { localStorage } = renderWindowStorageHook()
       act(() => {
         localStorage.set(LOCAL_STORAGE_KEY1, 1)
       })
       expect(localStorage.get(LOCAL_STORAGE_KEY1)).toBe(1)
     })
     it('get object value test', () => {
-      const localStorage = renderWindowStorageHook()
-      const LOCAL_STORAGE_KEY1 = 'key1'
+      const { localStorage } = renderWindowStorageHook()
       act(() => {
         localStorage.set(LOCAL_STORAGE_KEY1, 1)
       })
@@ -53,7 +45,7 @@ describe('localStorage test', () => {
 
   describe('localStorage set test', () => {
     it('set primitive value test', () => {
-      const localStorage = renderWindowStorageHook()
+      const { localStorage } = renderWindowStorageHook()
       act(() => {
         localStorage.set(LOCAL_STORAGE_KEY1, 1)
       })
@@ -64,7 +56,7 @@ describe('localStorage test', () => {
       expect(localStorage.get(LOCAL_STORAGE_KEY1)).toBe(2)
     })
     it('set object value test', () => {
-      const localStorage = renderWindowStorageHook()
+      const { localStorage } = renderWindowStorageHook()
       act(() => {
         localStorage.set(LOCAL_STORAGE_KEY1, TEST_OBJECT_VALUE)
       })
@@ -74,7 +66,7 @@ describe('localStorage test', () => {
 
   describe('localStorage clear test', () => {
     it('clear specific key test', () => {
-      const localStorage = renderWindowStorageHook()
+      const { localStorage } = renderWindowStorageHook()
       act(() => {
         localStorage.set(LOCAL_STORAGE_KEY1, 1)
         localStorage.set(LOCAL_STORAGE_KEY2, 2)
@@ -91,7 +83,7 @@ describe('localStorage test', () => {
 
   describe('localStorage clearAll test', () => {
     it('localStorage clearAll test', () => {
-      const localStorage = renderWindowStorageHook()
+      const { localStorage } = renderWindowStorageHook()
       act(() => {
         localStorage.set(LOCAL_STORAGE_KEY1, 1)
         localStorage.set(LOCAL_STORAGE_KEY2, 2)

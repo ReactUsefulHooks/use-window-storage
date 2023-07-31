@@ -45,7 +45,7 @@ export default class SessionStorage<ISessionStorage> extends BasicStorage {
 
   clearAll() {
     try {
-      window.sessionStorage.claer()
+      window.sessionStorage.clear()
       this.update()
     } catch (e) {
       console.error('[useWindowStorage.sessionStorage.clearAll], fail to clearAll: ', e)
