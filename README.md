@@ -55,6 +55,9 @@
 
 `use-window-storage` is the hook that provides `window.localStorage` and `window.sessionStorage` reactive.
 
+https://github.com/ReactUsefulHooks/use-window-storage/assets/40482274/928f4d7c-4226-4155-9b79-4dcfd1d6183d
+
+
 ## 🚧 Problem
 
 It is complicated to sync react state between local storage and session storage.
