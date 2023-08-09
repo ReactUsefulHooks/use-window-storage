@@ -3,10 +3,6 @@
 </p>
 
 <p align='center'>
-  <!-- slack -->
-  <a target="_blank" href="https://reactusefulhooks.slack.com">
-    <img src="https://img.shields.io/badge/slack-reactusefulhooks-9cf.svg?logo=slack" alt="slack" />
-  </a>
   <!-- package version -->
   <a target="_blank" href="https://npmjs.com/package/@react-useful-hooks/use-window-storage">
     <img src="https://img.shields.io/npm/v/@react-useful-hooks/use-window-storage" alt="npm package">
@@ -34,8 +30,7 @@
 </p>
 <br />
 
-# use-window-storage
-# NOT RELEASE YET
+# 📦 use-window-storage -> NOT RELEASED YET
 
 ## 📌 Table of contents
 
