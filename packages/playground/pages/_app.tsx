@@ -1,3 +1,4 @@
+import '../components/index.css'
 import type { AppProps } from 'next/app';
 import { WindowStorageProvider } from '@react-useful-hooks/use-window-storage';
 

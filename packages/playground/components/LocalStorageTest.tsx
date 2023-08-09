@@ -5,7 +5,9 @@ export default function LocalStorageTest() {
 	const { localStorage } = useWindowStorage<{ eddie_test: string }, {}>();
 	return (
 		<section>
-			<h1>Local Storage: {localStorage.get('eddie_test')}</h1>
+			<h1>
+				Local Storage: <strong>{localStorage.get('eddie_test')}</strong>
+			</h1>
 			<button
 				onClick={() => localStorage.set('eddie_test', `${Math.random()}`)}
 			>

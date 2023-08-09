@@ -1,0 +1,37 @@
+section {
+	padding: 5px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+section + section {
+	margin-top: 10px;
+}
+
+h1 {
+	color: lightgray;
+}
+h1::before {
+	content: '*';
+	display: inline-block;
+}
+
+h1 > strong {
+	display: block;
+	color: gray;
+	font-size: medium;
+	text-decoration: underline;
+}
+
+button {
+	width: calc(50% - 20px);
+	padding: 10px 10px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	background-color: #007bff;
+}
+button + button {
+	margin-left: 20px;
+}

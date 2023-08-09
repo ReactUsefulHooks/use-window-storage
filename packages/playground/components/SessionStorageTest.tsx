@@ -3,10 +3,11 @@ import { useWindowStorage } from '@react-useful-hooks/use-window-storage';
 
 export default function SessionStorageTest() {
 	const { sessionStorage } = useWindowStorage<{}, { eddie_test: string }>();
-  localStorage.getItem
 	return (
 		<section>
-			<h1>Session Storage: {sessionStorage.get('eddie_test')}</h1>
+			<h1>
+				Session Storage: <strong>{sessionStorage.get('eddie_test')}</strong>
+			</h1>
 			<button
 				onClick={() => sessionStorage.set('eddie_test', `${Math.random()}`)}
 			>
