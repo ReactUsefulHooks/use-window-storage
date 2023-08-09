@@ -7,16 +7,27 @@
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "keywords": [],
-  "description": "",
-  "homepage": "",
-  "repository": "",
+  "keywords": [
+    "window.localStroage",
+    "window.sessionStorage",
+    "localStorage",
+    "sessionStorage",
+    "react hooks",
+    "hook",
+    "react",
+    "nextjs",
+    "next",
+    "reactive"
+  ],
+  "description": "easy use of react hook that manage window.localStorage and window.sessionStorage",
+  "homepage": "https://github.com/ReactUsefulHooks/use-window-storage",
+  "repository": "https://github.com/ReactUsefulHooks/use-window-storage",
   "author": {
     "name": "Eddie Choi",
     "email": "choi.jongsun0329@gmail.com"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/ReactUsefulHooks/use-window-storage/issues/new?assignees=&labels=bug&template=bug-report.md"
   },
   "files": [
     "dist/*"
