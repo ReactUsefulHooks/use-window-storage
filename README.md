@@ -50,8 +50,7 @@
 
 `use-window-storage` is the hook that provides `window.localStorage` and `window.sessionStorage` reactive.
 
-https://github.com/ReactUsefulHooks/use-window-storage/assets/40482274/928f4d7c-4226-4155-9b79-4dcfd1d6183d
-
+https://github.com/ReactUsefulHooks/use-window-storage/static/use-window-storage-preview.mov
 
 ## 🚧 Problem
 
@@ -85,7 +84,7 @@ function App() {
 
 ## 🌈 API
 
-
+### 🟨 Javascript
 
 ### 🟦 Typescript
 
@@ -125,5 +124,4 @@ Please post issues to suggest new features.
 
 Become the first sponsor!
 
-> Check out more useful react hooks [here](https://github.com/ReactUsefulHooks). <br />
-> If you have any questions, feel free to join our [slack](https://reactusefulhooks.slack.com)
+> Check out more useful react hooks [here](https://github.com/ReactUsefulHooks).
