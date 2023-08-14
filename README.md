@@ -60,7 +60,7 @@ To make localStorage or sessionStorage value reactive needs copies of localStora
 
 ## 💡 Solution
 
-Use `use-window-storage` hook that provides encrypted storage values, safe Server Side use and reactivity.
+Use `use-window-storage` hook that provides encrypted storage values, safe Server Side use, typescript friendly and reactivity.
 
 ## 🛠 Installation
 
@@ -75,18 +75,154 @@ npm install @react-useful-hooks/use-window-storage
 Need to add `WindowStorageProvider` to App.
 
 ```javascript
-import { WindowStorageProvider } from '@react-useful-hooks/use-window-storage';
+import {WindowStorageProvider} from '@react-useful-hooks/use-window-storage';
 
 function App() {
-	return <WindowStorageProvider>//...</WindowStorageProvider>;
+    return <WindowStorageProvider>//...</WindowStorageProvider>;
 }
 ```
 
 ## 🌈 API
 
-### 🟨 Javascript
+LocalStorage and SessionStorage have same interface:
 
-### 🟦 Typescript
+```typescript
+interface Storage {
+    get: (key: string) => unknown
+    set: (key: string, value: any) => void
+    clear: (key: string) => void
+    clearAll: () => void
+}
+```
+
+### 📦 Session Storage
+
+#### 1. sessionStorage.get
+
+sessionStorage.get will return value that was stored in sessionStorage:
+
+```typescript
+const {sessionStorage} = useWindowStorage<{}, { eddie: string }>()
+sessionStorage.get('sam') // 🚨 typescript error> key sam is not defined
+sessionStorage.get('eddie') // will return string value
+```
+
+#### 2. sessionStorage.set
+
+sessionStorage.set will store value with designated key:
+
+```typescript
+const {sessionStorage} = useWindowStorage<{}, { eddie: string }>()
+sessionStorage.set('sam', 'hello') // 🚨 typescript error> only key 'eddie' is defined
+sessionStorage.set('eddie', 2) // 🚨 typescript error> key 'eddie' should have value typed string
+sessionStorage.set('eddie', 'hello world') // set sessionStorage with key 'eddie'
+```
+
+#### 3. sessionStorage.clear
+
+sessionStorage.clear will remove value with key:
+
+```typescript
+const {sessionStorage} = useWindowStorage<{}, { eddie: string }>()
+sessionStorage.clear('sam') // 🚨 typescript error> there are no key 'sam'
+sessionStorage.clear('eddie') // clear sessionStorage value
+```
+
+#### 3. sessionStorage.clearAll
+
+sessionStorage.clearAll will remove all sessionStorage values:
+
+```typescript
+const {sessionStorage} = useWindowStorage<{}, { eddie: string }>()
+sessionStorage.clearAll();
+```
+
+### 📦 Local Storage
+
+#### 1. localStorage.get
+
+localStorage.get will return value that was stored in localStorage:
+
+```typescript
+const {localStorage} = useWindowStorage<{ eddie: string }, {}>()
+localStorage.get('sam') // 🚨 typescript error> key sam is not defined
+localStorage.get('eddie'); // will return string value
+```
+
+#### 2. localStorage.set
+
+localStorage.set will store value with designated key:
+
+```typescript
+const {localStorage} = useWindowStorage<{ eddie: string }, {}>()
+localStorage.set('sam', 'hello') // 🚨 typescript error> only key 'eddie' is defined
+localStroage.set('eddie', 2) // 🚨 typescript error> key 'eddie' should have value typed string
+localStorage.set('eddie', 'hello world'); // set localStorage with key 'eddie'
+```
+
+#### 3. localStorage.clear
+
+localStorage.clear will remove value with key:
+
+```typescript
+const {localStorage} = useWindowStorage<{ eddie: string }, {}>()
+localStorage.clear('sam') // 🚨 typescript error> there are no key 'sam'
+localStorage.clear('eddie'); // clear localStorage value
+```
+
+#### 3. localStorage.clearAll
+
+localStorage.clearAll will remove all localStorage values:
+
+```typescript
+const {localStorage} = useWindowStorage<{ eddie: string }, {}>()
+localStorage.clearAll();
+```
+
+## 📝 Example
+
+```typescript
+// useStorage.ts
+// can overwrite and handle storage values globally
+import {useWindowStorage} from '@react-useful-hooks/use-window-storage'
+
+interface ILocalStorage {
+    eddie: string
+}
+
+interface ISessionStorage {
+    count: number
+}
+
+export const useStorage = useWindowStorage<ILocalStorage, ISessionStorage>
+```
+
+```tsx
+// example.tsx
+import React, {ReactElement} from 'react'
+import {useStorage} from './useStorage'
+
+export default function Example(): ReactElement {
+    const {localStorage, sessionStorage} = useStorage()
+    
+    const handleCount = (increment: boolean): void => {
+        const prevValue = sessionStorage.get('count')
+        if (increment) sessionStorage('count', prevValue + 1)
+        else sessionStorage('count', prevValue - 1)
+    }
+
+    return (
+        <>
+            <div>{localStorage.get('eddie')}</div>
+            <div>
+                <h1>{sessionStorage.get('count')}</h1>
+                <button onClick={() => handleCount(true)}>PLUS</button>
+                <button onClick={() => handleCount(false)}>PLUS</button>
+            </div>
+        </>
+    );
+}
+```
 
 ## 🏆 Contributors
 
